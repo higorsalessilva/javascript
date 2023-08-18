@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nascionalidade</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1 {
+            font-size: 2.3em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulário</h1>
+    Qual pais você mora?<br>
+    <input type="text" name="txt1" id="txt1">
+    <input type="button" value="Enviar" onclick="clicou()">
+    <div id="res">
+
+    </div>
+    <script>
+        function clicou() {
+        var res = window.document.querySelector('div#res')
+        var txt = window.document.getElementById('txt1')
+        var pais = (txt.value)
+        if(pais.toUpperCase() == 'BRASIL') {
+            res.innerHTML = `Você é Brasileiro!`
+        } else {
+            res.innerHTML = 'Você é Estrangeiro!'
+        }
+        }
+    </script>
+</body>
+</html>
