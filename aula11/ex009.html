@@ -11,26 +11,38 @@
         h1 {
             font-size: 2.3em;
         }
+        input#idade {
+            margin-left: 3px;
+        }
+        input#txt1 {
+            margin-left:11px;
+        }
     </style>
 </head>
 <body>
     <h1>Formulário</h1>
-    Qual pais você mora?<br>
-    <input type="text" name="txt1" id="txt1">
+    <p>Nome:   <input type="text" name="nome" id="nome"><br></p>
+    <p>Idade:  <input type="number" name="idade" id="idade"><br></p>
+    <p>País:   <input type="text" name="txt1" id="txt1"></p>
     <input type="button" value="Enviar" onclick="clicou()">
     <div id="res">
 
     </div>
     <script>
         function clicou() {
-        var res = window.document.querySelector('div#res')
-        var txt = window.document.getElementById('txt1')
-        var pais = (txt.value)
-        if(pais.toUpperCase() == 'BRASIL') {
-            res.innerHTML = `Você é Brasileiro!`
-        } else {
-            res.innerHTML = 'Você é Estrangeiro!'
-        }
+            var nome = window.document.querySelector('input#nome')
+            var idade = window.document.getElementById('idade')
+            var res = window.document.querySelector('div#res')
+            var txt = window.document.getElementById('txt1')
+            var nome = (nome.value)
+            var idade = (idade.value)
+            var pais = (txt.value)
+            res.innerHTML = `Olá ${nome}, prazer em conhece-lo!<br> Você tem ${idade} anos.<br>`
+            if(pais.toUpperCase() == 'BRASIL') {
+                res.innerHTML += `Brasileiro!`
+            } else {
+                res.innerHTML += 'Estrangeiro!'
+            }
         }
     </script>
 </body>
